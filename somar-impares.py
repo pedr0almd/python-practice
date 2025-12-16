@@ -7,7 +7,6 @@ def mostrar_titulo(loop_maximo):
     print('-' * 60)
     print(f'Contador de {loop_maximo} números ímpares\n')
     
-
 def ler_numeros(loop_maximo):
     numeros = []
     for i in range(1, loop_maximo + 1):
