@@ -10,7 +10,6 @@ class Carro:
         
         Carro.carros.append(self)
     
-    
     def __str__(self):
         return f'{self.marca} | {self.modelo} | {self.cor} | {self.ano}'
     
