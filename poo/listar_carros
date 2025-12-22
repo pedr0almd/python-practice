@@ -1,17 +1,26 @@
 class Carro:
     carros = []
     
-    def __init__(self, modelo, cor, ano):
+    #Usando Type Hint para melhorar legibilidade
+    def __init__(self, marca: str, modelo: str, cor: str, ano: int):
+        self.marca = marca
         self.modelo = modelo
         self.cor = cor
         self.ano = ano
         
         Carro.carros.append(self)
     
-    def listar_carros():
-        for carro in Carro.carros:
-            print(f'{carro.modelo} | {carro.cor} | {carro.ano}')
+    
+    def __str__(self):
+        return f'{self.marca} | {self.modelo} | {self.cor} | {self.ano}'
+    
+    #Usando a classe como parâmetro para simplificar a exibição
+    @classmethod
+    def listar_carros(cls):
+        for carro in cls.carros:
+            print(carro)
         
-fiat_uno = Carro('Fiat Uno', 'Prata', '2000')
+uno = Carro('Fiat', 'Uno', 'Prata', 2000)
+gol = Carro('Volkswagen' , 'Gol', 'Branco', 1998)
 
 Carro.listar_carros()
